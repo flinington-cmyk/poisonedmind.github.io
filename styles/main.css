@@ -71,6 +71,88 @@ section {
   border-radius: 16px;
   max-width: 700px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover-эффект для картинок */
+img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Красивая кнопка "Наверх" */
+#toTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #8e2de2 0%, #4a00e0 100%);
+  color: white;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+#toTopBtn:hover {
+  background: linear-gradient(90deg, #4a00e0 0%, #8e2de2 100%);
+  transform: scale(1.12);
+}
+
+/* Плавающая кнопка Discord */
+#discord-float-btn {
+  position: fixed;
+  top: 40%;
+  right: -140px;
+  background: linear-gradient(90deg, #7289da 0%, #99aab5 100%);
+  color: #fff;
+  padding: 12px 24px 12px 16px;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  transition: right 0.3s;
+}
+#discord-float-btn:hover {
+  right: 0;
+  background: linear-gradient(90deg, #5865f2 0%, #7289da 100%);
+}
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #181c2f;
+}
+
+/* Плавный скролл */
+html {
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 600px) {
